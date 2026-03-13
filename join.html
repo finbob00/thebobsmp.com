@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Join • The Bob SMP</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="nav-brand">THE BOB SMP</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="rules.html">Rules</a>
+            <a href="staff.html">Staff</a>
+            <a href="join.html" class="active">Join</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="vote.html">Vote</a>
+            <a href="status.html">Status</a>
+        </div>
+    </nav>
+</header>
+
+<div class="main-wrapper">
+    <div class="site-header">
+        <h1 class="site-title">How to join</h1>
+        <p class="site-tagline">The official home of The Bob SMP</p>
+    </div>
+
+    <div class="card grid-2">
+        <div>
+            <h2>Java Edition</h2>
+            <p>
+                Open <strong>Multiplayer</strong> in Minecraft Java, click <strong>Add Server</strong>, and use:
+            </p>
+            <p>
+                Address: <span class="code">java.thebobsmp.com:40289</span>
+            </p>
+            <ul class="list">
+                <li>Version: use the server’s listed version (or latest compatible).</li>
+                <li>Make sure you have a stable internet connection.</li>
+                <li>Read the <a href="rules.html">rules</a> before you join.</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Bedrock Edition</h2>
+            <p>
+                On Bedrock (Windows 10, mobile, console), add a new external server:
+            </p>
+            <p>
+                Address: <span class="code">play.thebobsmp.com</span><br>
+                Port: <span class="code">2327</span>
+            </p>
+            <ul class="list">
+                <li>Make sure “Use External Server” is supported on your platform.</li>
+                <li>Check that you typed the address and port exactly.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Discord & whitelisting</h2>
+        <p>
+            Some SMPs require whitelisting or application before joining. If The Bob SMP uses this,
+            you can handle it through the Discord server.
+        </p>
+        <div class="btn-row">
+            <a href="#" class="btn">Join Discord</a>
+        </div>
+        <p style="margin-top:0.5rem;font-size:0.85rem;color:#888;">
+            Replace the button link with your real Discord invite URL.
+        </p>
+    </div>
+</div>
+
+<footer class="footer">
+    &copy; <span id="year"></span> The Bob SMP. All rights reserved.
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
 
