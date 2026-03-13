@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Status • The Bob SMP</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
 <header>
@@ -23,18 +25,42 @@
 
 <div class="main-wrapper">
     <div class="site-header">
-        <h1 class="site-title">Server status</h1>
+        <h1 class="site-title">Server Status</h1>
         <p class="site-tagline">The official home of The Bob SMP</p>
     </div>
 
     <div class="card">
-        <h2>Live status</h2>
-        <p>
-            You can embed a live status widget here from a Minecraft server status service.
-            For now, this is a placeholder section.
-        </p>
-        <p style="margin-top:0.5rem;font-size:0.9rem;color:#aaa;">
-            Example: embed an iframe or script from a status provider that shows online/offline, player count, and MOTD.
+        <h2>Java Edition Status</h2>
+        <p>Address: <span class="code">java.thebobsmp.com:40289</span></p>
+        <iframe 
+            src="https://api.mcsrvstat.us/simple/java.thebobsmp.com:40289"
+            width="100%" 
+            height="60"
+            style="border:none;border-radius:8px;">
+        </iframe>
+    </div>
+
+    <div class="card">
+        <h2>Bedrock Edition Status</h2>
+        <p>Address: <span class="code">play.thebobsmp.com</span> • Port: <span class="code">2327</span></p>
+        <iframe 
+            src="https://api.mcsrvstat.us/simple/play.thebobsmp.com:2327"
+            width="100%" 
+            height="60"
+            style="border:none;border-radius:8px;">
+        </iframe>
+    </div>
+
+    <div class="card">
+        <h2>What this page shows</h2>
+        <ul class="list">
+            <li>Online / offline status</li>
+            <li>Current player count</li>
+            <li>Server MOTD</li>
+            <li>Ping / latency</li>
+        </ul>
+        <p style="color:#888;font-size:0.85rem;margin-top:0.5rem;">
+            Status updates automatically every time you refresh the page.
         </p>
     </div>
 </div>
@@ -48,4 +74,3 @@
 </script>
 </body>
 </html>
-
