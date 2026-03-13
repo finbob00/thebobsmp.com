@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery • The Bob SMP</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="nav-brand">THE BOB SMP</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="rules.html">Rules</a>
+            <a href="staff.html">Staff</a>
+            <a href="join.html">Join</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="vote.html">Vote</a>
+            <a href="status.html">Status</a>
+        </div>
+    </nav>
+</header>
+
+<div class="main-wrapper">
+    <div class="site-header">
+        <h1 class="site-title">Gallery</h1>
+        <p class="site-tagline">The official home of The Bob SMP</p>
+    </div>
+
+    <div class="card">
+        <h2>Community builds & screenshots</h2>
+        <p>
+            Show off the best moments and builds from The Bob SMP.
+            You can upload images to <span class="code">assets/images/</span> and reference them here.
+        </p>
+    </div>
+
+    <div class="card gallery-grid">
+        <div class="gallery-item">
+            Add your first screenshot here (e.g. spawn)
+        </div>
+        <div class="gallery-item">
+            Another slot for a cool base or project
+        </div>
+        <div class="gallery-item">
+            Use this grid for events, shops, or landmarks
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    &copy; <span id="year"></span> The Bob SMP. All rights reserved.
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
 
