@@ -1,22 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>The Bob SMP</title>
-    <style>
-        body { font-family: Arial; background: #111; color: white; text-align: center; padding: 40px; }
-        h1 { font-size: 48px; margin-bottom: 10px; }
-        p { font-size: 20px; }
-        .box { background: #222; padding: 20px; border-radius: 10px; display: inline-block; margin-top: 20px; }
-    </style>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <h1>The Bob SMP</h1>
-    <p>Welcome to the official website!</p>
+<header>
+    <nav class="navbar">
+        <div class="nav-brand">THE BOB SMP</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="rules.html">Rules</a>
+            <a href="staff.html">Staff</a>
+            <a href="join.html">Join</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="vote.html">Vote</a>
+            <a href="status.html">Status</a>
+        </div>
+    </nav>
+</header>
 
-    <div class="box">
-        <h2>How to Join</h2>
-        <p><strong>Java:</strong> java.thebobsmp.com:40289</p>
-        <p><strong>Bedrock:</strong> play.thebobsmp.com (Port 2327)</p>
+<div class="main-wrapper">
+    <div class="site-header">
+        <h1 class="site-title">The Bob SMP</h1>
+        <p class="site-tagline">The official home of The Bob SMP</p>
     </div>
+
+    <div class="card">
+        <span class="badge badge-green">Online community</span>
+        <h2>Welcome to The Bob SMP</h2>
+        <p>
+            A survival multiplayer world focused on community, fair play, and long-term progression.
+            Explore, build, trade, and create stories with other players in a carefully moderated SMP.
+        </p>
+
+        <div class="btn-row">
+            <a href="join.html" class="btn">How to join</a>
+            <a href="rules.html" class="btn btn-ghost">Read the rules</a>
+            <a href="status.html" class="btn btn-ghost">Server status</a>
+        </div>
+    </div>
+
+    <div class="card grid-2">
+        <div>
+            <h2>Server details</h2>
+            <p><span class="card-section-title">Java Edition</span></p>
+            <p><span class="code">java.thebobsmp.com:40289</span></p>
+
+            <p style="margin-top:0.75rem;"><span class="card-section-title">Bedrock Edition</span></p>
+            <p>
+                Address: <span class="code">play.thebobsmp.com</span><br>
+                Port: <span class="code">2327</span>
+            </p>
+        </div>
+        <div>
+            <h2>Quick links</h2>
+            <ul class="list">
+                <li><a href="rules.html">Server rules &amp; guidelines</a></li>
+                <li><a href="staff.html">Meet the staff team</a></li>
+                <li><a href="gallery.html">Community builds &amp; screenshots</a></li>
+                <li><a href="vote.html">Vote links &amp; rewards</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Discord &amp; community</h2>
+        <p>
+            Most coordination, events, and announcements happen in our Discord server.
+            Join to get whitelisted, report issues, suggest features, and hang out with the community.
+        </p>
+        <div class="btn-row">
+            <a href="#" class="btn">Join Discord</a>
+        </div>
+        <p style="margin-top:0.5rem;font-size:0.85rem;color:#888;">
+            Replace the button link with your real Discord invite URL.
+        </p>
+    </div>
+</div>
+
+<footer class="footer">
+    &copy; <span id="year"></span> The Bob SMP. All rights reserved.
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
