@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <title>Staff • The Bob SMP</title>
     <link rel="stylesheet" href="assets/style.css">
+
+    <style>
+        /* Role colours */
+        .role-owner { color: #f1c40f; }
+        .role-senior { color: #9b59b6; }
+        .role-mod { color: #3498db; }
+        .role-engage { color: #2ecc71; }
+
+        /* Hover effect */
+        .staff-card {
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        .staff-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Section headers */
+        .staff-section-title {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -36,59 +60,82 @@
     </div>
 
     <!-- OWNERS -->
-    <div class="card staff-grid">
-        <div class="staff-card">
-            <div class="staff-name">@finbob00 :D</div>
-            <div class="staff-role">Owner</div>
-            <div class="staff-note">
-                Oversees the entire server, technical setup, and long-term direction of The Bob SMP.
-            </div>
-        </div>
+    <div class="card">
+        <div class="staff-section-title">Owners</div>
+        <div class="staff-grid">
 
-        <div class="staff-card">
-            <div class="staff-name">@The Bob SMP</div>
-            <div class="staff-role">Owner Alt</div>
-            <div class="staff-note">
-                Alternate account used for testing, moderation, and server management.
+            <div class="staff-card">
+                <div class="staff-name">@finbob00 :D</div>
+                <div class="staff-role role-owner">Owner</div>
+                <div class="staff-note">
+                    Oversees the entire server, technical setup, and long-term direction of The Bob SMP.
+                </div>
             </div>
+
+            <div class="staff-card">
+                <div class="staff-name">@The Bob SMP</div>
+                <div class="staff-role role-owner">Owner Alt</div>
+                <div class="staff-note">
+                    Alternate account used for testing, moderation, and server management.
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- SENIOR MODS -->
-    <div class="card staff-grid">
-        <div class="staff-card">
-            <div class="staff-name">@posslynn ᶻ 𝘇 𐰁</div>
-            <div class="staff-role">Senior Moderator</div>
-            <div class="staff-note">
-                Supports players, manages reports, and helps maintain a positive community environment.
+    <!-- SENIOR MODERATORS -->
+    <div class="card">
+        <div class="staff-section-title">Senior Moderators</div>
+        <div class="staff-grid">
+
+            <div class="staff-card">
+                <div class="staff-name">@posslynn ᶻ 𝘇 𐰁</div>
+                <div class="staff-role role-senior">Senior Moderator</div>
+                <div class="staff-note">
+                    Supports players, manages reports, and helps maintain a positive community environment.
+                </div>
             </div>
+
         </div>
     </div>
 
     <!-- MODERATORS -->
-    <div class="card staff-grid">
-        <div class="staff-card">
-            <div class="staff-name">@s0cratic</div>
-            <div class="staff-role">Moderator</div>
-            <div class="staff-note">
-                Assists with day-to-day moderation, player support, and rule enforcement.
-            </div>
-        </div>
+    <div class="card">
+        <div class="staff-section-title">Moderators</div>
+        <div class="staff-grid">
 
-        <div class="staff-card">
-            <div class="staff-name">CashMoney</div>
-            <div class="staff-role">Moderator — Engagement Team</div>
-            <div class="staff-note">
-                Helps boost community activity, encourages player interaction, and keeps the server lively.
+            <div class="staff-card">
+                <div class="staff-name">@s0cratic</div>
+                <div class="staff-role role-mod">Moderator</div>
+                <div class="staff-note">
+                    Assists with day-to-day moderation, player support, and rule enforcement.
+                </div>
             </div>
-        </div>
 
-        <div class="staff-card">
-            <div class="staff-name">Juggernaut</div>
-            <div class="staff-role">Moderator — Engagement Team</div>
-            <div class="staff-note">
-                Focuses on community engagement, events, and keeping chat active and welcoming.
+        </div>
+    </div>
+
+    <!-- ENGAGEMENT TEAM -->
+    <div class="card">
+        <div class="staff-section-title">Engagement Team</div>
+        <div class="staff-grid">
+
+            <div class="staff-card">
+                <div class="staff-name">CashMoney</div>
+                <div class="staff-role role-engage">Moderator — Engagement Team</div>
+                <div class="staff-note">
+                    Helps boost community activity, encourages player interaction, and keeps the server lively.
+                </div>
             </div>
+
+            <div class="staff-card">
+                <div class="staff-name">Juggernaut</div>
+                <div class="staff-role role-engage">Moderator — Engagement Team</div>
+                <div class="staff-note">
+                    Focuses on community engagement, events, and keeping chat active and welcoming.
+                </div>
+            </div>
+
         </div>
     </div>
 
