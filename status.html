@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="assets/style.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+
+    <style>
+        .status-box {
+            padding: 10px 0;
+            font-size: 1rem;
+        }
+        .status-online { color: #2ecc71; font-weight: bold; }
+        .status-offline { color: #e74c3c; font-weight: bold; }
+        .status-label { opacity: 0.7; }
+        .motd { opacity: 0.8; font-style: italic; }
+    </style>
 </head>
 <body>
 <header>
@@ -29,26 +40,24 @@
         <p class="site-tagline">The official home of The Bob SMP</p>
     </div>
 
+    <!-- JAVA STATUS -->
     <div class="card">
         <h2>Java Edition Status</h2>
-        <p>Address: <span class="code">java.thebobsmp.com:40289</span></p>
-        <iframe 
-            src="https://api.mcsrvstat.us/simple/java.thebobsmp.com:40289"
-            width="100%" 
-            height="60"
-            style="border:none;border-radius:8px;">
-        </iframe>
+        <p>Address: <span class="code">java.thebobsmp.com</span></p>
+
+        <div id="java-status" class="status-box">
+            Loading Java status...
+        </div>
     </div>
 
+    <!-- BEDROCK STATUS -->
     <div class="card">
         <h2>Bedrock Edition Status</h2>
         <p>Address: <span class="code">play.thebobsmp.com</span> • Port: <span class="code">2327</span></p>
-        <iframe 
-            src="https://api.mcsrvstat.us/simple/play.thebobsmp.com:2327"
-            width="100%" 
-            height="60"
-            style="border:none;border-radius:8px;">
-        </iframe>
+
+        <div id="bedrock-status" class="status-box">
+            Loading Bedrock status...
+        </div>
     </div>
 
     <div class="card">
@@ -57,6 +66,7 @@
             <li>Online / offline status</li>
             <li>Current player count</li>
             <li>Server MOTD</li>
+            <li>Version</li>
             <li>Ping / latency</li>
         </ul>
         <p style="color:#888;font-size:0.85rem;margin-top:0.5rem;">
@@ -70,7 +80,56 @@
 </footer>
 
 <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// API endpoints
+const JAVA_API = "https://api.mcsrvstat.us/2/java.thebobsmp.com";
+const BEDROCK_API = "https://api.mcsrvstat.us/bedrock/2/play.thebobsmp.com:2327";
+
+// Elements
+const javaBox = document.getElementById("java-status");
+const bedrockBox = document.getElementById("bedrock-status");
+
+// Fetch Java status
+fetch(JAVA_API)
+    .then(res => res.json())
+    .then(data => {
+        if (!data.online) {
+            javaBox.innerHTML = `<span class="status-offline">Offline</span>`;
+            return;
+        }
+
+        javaBox.innerHTML = `
+            <div><span class="status-online">Online</span></div>
+            <div><span class="status-label">Players:</span> ${data.players.online}/${data.players.max}</div>
+            <div><span class="status-label">Version:</span> ${data.version}</div>
+            <div class="motd">${data.motd.clean.join("<br>")}</div>
+        `;
+    })
+    .catch(() => {
+        javaBox.innerHTML = `<span class="status-offline">Unable to fetch status</span>`;
+    });
+
+// Fetch Bedrock status
+fetch(BEDROCK_API)
+    .then(res => res.json())
+    .then(data => {
+        if (!data.online) {
+            bedrockBox.innerHTML = `<span class="status-offline">Offline</span>`;
+            return;
+        }
+
+        bedrockBox.innerHTML = `
+            <div><span class="status-online">Online</span></div>
+            <div><span class="status-label">Players:</span> ${data.players.online}/${data.players.max}</div>
+            <div><span class="status-label">Version:</span> ${data.version.name}</div>
+            <div class="motd">${data.motd.clean.join("<br>")}</div>
+        `;
+    })
+    .catch(() => {
+        bedrockBox.innerHTML = `<span class="status-offline">Unable to fetch status</span>`;
+    });
 </script>
+
 </body>
 </html>
